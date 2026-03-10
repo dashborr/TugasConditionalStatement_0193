@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void inputdata(float &berat, float &tinggi){
+void inputData(float &berat, float &tinggi){
     cout << "--- Selamat Datang Mahasiswa Kelas A 2025 ---" << endl;
     cout << "Masukkan berat badan (kg): ";
     cin >> berat;
@@ -23,10 +23,17 @@ string statusBMI(float bmi){
     else
         return "Obesitas";
 }
-void inputData(float &berat, float &tinggi){
-    cout << "--- Selamat Datang Mahasiswa Kelas A 2025 ---" << endl;
-    cout << "Masukkan berat badan (kg): ";
-    cin >> berat;
-    cout << "Masukkan tinggi badan (meter): ";
-    cin >> tinggi;
+
+int main(){
+    float berat, tinggi, bmi;
+
+    inputData(berat, tinggi);
+
+    bmi = hitungBMI(berat, tinggi);
+
+    cout << "\n--- Hasil ---" << endl;
+    cout << "BMI Anda : " << bmi << endl;
+    cout << "Status   : " << statusBMI(bmi) << endl;
+
+    return 0;
 }
